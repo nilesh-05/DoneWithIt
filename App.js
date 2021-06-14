@@ -1,44 +1,31 @@
 import React from "react";
 import { SafeAreaView, StyleSheet, View } from "react-native";
-import AppButton from "./app/components/AppButton";
 import ViewImageScreen from "./app/screens/ViewImageScreen";
 import WelcomeScreen from "./app/screens/WelcomeScreen";
-
-import Card from "./app/components/Card";
 import ListingDetailsScreen from "./app/screens/ListingDetailsScreen";
 import MessagesScreen from "./app/screens/MessagesScreen";
+import Screen from "./app/components/Screen";
+import Icon from "./app/components/Icon";
+import ListItem from "./app/components/ListItem";
+import AccountScreen from "./app/screens/AccountScreen";
+import ListingsScreen from "./app/screens/ListingsScreen";
 
 export default function App() {
 	// return <WelcomeScreen />;
 	// return <ViewImageScreen />;
-	return <MessagesScreen />;
+	// return <MessagesScreen />;
 	// return <ListingDetailsScreen />;
 	// return (
-	// 	<View
-	// 		style={{
-	// 			flex: 1,
-	// 			justifyContent: "center",
-	// 			alignItems: "center",
-	// 		}}
-	// 	>
-	// 		<AppButton title="Login" onPress={() => console.log("Tapped")} />
-	// 	</View>
-	// );
-	// return (
-	// 	<View
-	// 		style={{
-	// 			backgroundColor: "#f8f4f4",
-	// 			padding: 20,
-	// 			paddingTop: 100,
-	// 		}}
-	// 	>
-	// 		<Card
-	// 			title="Red Jacket For Sale"
-	// 			subTitle="$100"
-	// 			image={require("./app/assets/jacket.jpg")}
+	// 	<Screen>
+	// 		<ListItem
+	// 			title="Title 1"
+	// 			subTitle="Subtitle 1"
+	// 			IconComponent={<Icon name="email" />}
 	// 		/>
-	// 	</View>
+	// 	</Screen>
 	// );
+	// return <AccountScreen />;
+	return <ListingsScreen />;
 }
 
 const styles = StyleSheet.create({
