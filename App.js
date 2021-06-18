@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { SafeAreaView, StyleSheet, View } from "react-native";
 import ViewImageScreen from "./app/screens/ViewImageScreen";
 import WelcomeScreen from "./app/screens/WelcomeScreen";
@@ -10,22 +10,16 @@ import ListItem from "./app/components/ListItem";
 import AccountScreen from "./app/screens/AccountScreen";
 import ListingsScreen from "./app/screens/ListingsScreen";
 
+import { Text, TextInput } from "react-native";
+import AppTextInput from "./app/components/AppTextInput";
+
 export default function App() {
-	// return <WelcomeScreen />;
-	// return <ViewImageScreen />;
-	// return <MessagesScreen />;
-	// return <ListingDetailsScreen />;
-	// return (
-	// 	<Screen>
-	// 		<ListItem
-	// 			title="Title 1"
-	// 			subTitle="Subtitle 1"
-	// 			IconComponent={<Icon name="email" />}
-	// 		/>
-	// 	</Screen>
-	// );
-	// return <AccountScreen />;
-	return <ListingsScreen />;
+	const [firstName, setFirstName] = useState("");
+	return (
+		<Screen>
+			<AppTextInput placeholder="Username" icon="email" />
+		</Screen>
+	);
 }
 
 const styles = StyleSheet.create({
