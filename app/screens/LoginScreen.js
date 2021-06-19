@@ -1,14 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import { StyleSheet, Image } from "react-native";
 import { Formik } from "formik";
+import * as Yup from "yup";
 
-import Screen from "../components/Screen";
 import AppTextInput from "../components/AppTextInput";
 import AppButton from "../components/AppButton";
+import ErrorMessage from "../components/ErrorMessage";
+import Screen from "../components/Screen";
+
+const validationSchema = Yup.object().shape({
+	email: Yup.string().required().email().label("Email"),
+	password: Yup.string().required().min(6).max(20).label("Password"),
+});
 
 function LoginScreen(props) {
-	const [email, setEmail] = useState();
-	const [password, setPassword] = useState();
 	return (
 		<Screen style={styles.container}>
 			<Image
@@ -18,31 +23,32 @@ function LoginScreen(props) {
 			<Formik
 				initialValues={{ email: "", password: "" }}
 				onSubmit={(values) => console.log(values)}
+				validationSchema={validationSchema}
 			>
-				{({ handleChange, handleSubmit }) => (
+				{({ handleChange, handleSubmit, errors }) => (
 					<>
 						<AppTextInput
 							autoCorrect={false}
 							autoCapitalize="none"
 							icon="email"
 							keyboardType="email-address"
-							onChangeText={(text) => setEmail(text)}
+							onChangeText={handleChange("email")}
 							placeholder="Email"
 							textContentType="emailAddress"
 						/>
+						<ErrorMessage error={errors.email} />
+
 						<AppTextInput
 							autoCapitalize="none"
 							autoCorrect={false}
 							icon="lock"
-							onChangeText={(text) => setPassword(text)}
+							onChangeText={handleChange("password")}
 							placeholder="Password"
 							secureTextEntry={true}
 							textContentType="password"
 						/>
-						<AppButton
-							title="Login"
-							onPress={() => console.log(email, password)}
-						/>
+						<ErrorMessage error={errors.password} />
+						<AppButton title="Login" onPress={handleSubmit} />
 					</>
 				)}
 			</Formik>
