@@ -1,13 +1,8 @@
 import React from "react";
-import {
-	View,
-	StyleSheet,
-	Image,
-	TouchableOpacity,
-	TouchableHighlight,
-} from "react-native";
+import { View, StyleSheet, Image, TouchableHighlight } from "react-native";
 import AppText from "./AppText";
 import Swipeable from "react-native-gesture-handler/Swipeable";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import colors from "../config/colors";
 
@@ -33,6 +28,7 @@ function ListItem({
 							</AppText>
 						)}
 					</View>
+					<MaterialCommunityIcons name="chevron-right" size={25} />
 				</View>
 			</TouchableHighlight>
 		</Swipeable>
