@@ -11,7 +11,10 @@ const Stack = createStackNavigator();
 const FeedNavigator = () => (
 	<Stack.Navigator
 		mode="modal"
-		screenOptions={{ headerTitleAlign: "center", gestureEnabled: true }}
+		screenOptions={{
+			headerTitleAlign: "center",
+			gestureEnabled: true,
+		}}
 	>
 		<Stack.Screen
 			name="Listings"
