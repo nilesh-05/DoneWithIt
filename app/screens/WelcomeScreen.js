@@ -2,11 +2,12 @@ import React from "react";
 import { ImageBackground, StyleSheet, View, Image, Text } from "react-native";
 
 import Button from "../components/Button";
+import route from "../navigation/route";
 
 function WelcomeScreen({ navigation }) {
 	return (
 		<ImageBackground
-			blurRadius={10}
+			blurRadius={2}
 			style={styles.background}
 			source={require("../assets/background.jpg")}
 		>
@@ -20,12 +21,12 @@ function WelcomeScreen({ navigation }) {
 			<View style={styles.buttonsContainer}>
 				<Button
 					title="Login"
-					onPress={() => navigation.navigate("Login")}
+					onPress={() => navigation.navigate(route.LOGIN)}
 				/>
 				<Button
 					title="Register"
 					color="secondary"
-					onPress={() => navigation.navigate("Register")}
+					onPress={() => navigation.navigate(route.REGISTER)}
 				/>
 			</View>
 		</ImageBackground>
