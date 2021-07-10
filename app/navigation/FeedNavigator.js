@@ -14,6 +14,7 @@ const FeedNavigator = () => (
 		screenOptions={{
 			headerTitleAlign: "center",
 			gestureEnabled: true,
+			headerShown: false,
 		}}
 	>
 		<Stack.Screen
