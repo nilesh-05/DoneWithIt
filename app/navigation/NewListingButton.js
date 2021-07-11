@@ -26,9 +26,14 @@ const styles = StyleSheet.create({
 		height: 80,
 		width: 80,
 		borderRadius: 40,
-		bottom: 30,
+		bottom: 35,
 		borderColor: colors.white,
-		borderWidth: 10,
+		borderWidth: 5,
+		shadowColor: "#000",
+		shadowOffset: { width: 1, height: 1 },
+		shadowOpacity: 1,
+		shadowRadius: 1,
+		elevation: 5,
 	},
 });
 
