@@ -1,8 +1,5 @@
 import React from "react";
-import {
-	createStackNavigator,
-	TransitionPresets,
-} from "@react-navigation/stack";
+import { createStackNavigator } from "@react-navigation/stack";
 import AccountScreen from "../screens/AccountScreen";
 import MessagesScreen from "../screens/MessagesScreen";
 

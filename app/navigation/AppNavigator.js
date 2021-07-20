@@ -3,10 +3,10 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import AccountNavigator from "./AccountNavigator";
-import ListingEditScreen from "../screens/ListingEditScreen";
 import FeedNavigator from "./FeedNavigator";
+import ListingEditScreen from "../screens/ListingEditScreen";
 import NewListingButton from "./NewListingButton";
-import route from "./route";
+import routes from "./routes";
 
 const Tab = createBottomTabNavigator();
 
@@ -31,7 +31,7 @@ const AppNavigator = () => (
 			options={({ navigation }) => ({
 				tabBarButton: () => (
 					<NewListingButton
-						onPress={() => navigation.navigate(route.LISTING_EDIT)}
+						onPress={() => navigation.navigate(routes.LISTING_EDIT)}
 					/>
 				),
 				tabBarIcon: ({ color, size }) => (
